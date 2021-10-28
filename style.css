@@ -96,7 +96,7 @@ a:hover {
 }
 
 .b-parallax {
-    background-attachment: scroll;
+    background-attachment: fixed;
 }
 
 .d-bloc {
