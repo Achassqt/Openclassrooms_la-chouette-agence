@@ -1,5 +1,3 @@
-AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/x-javascript
-SetOutputFilter DEFLATE
 # BEGIN Cache-Control Headers
 <IfModule mod_headers.c>
 <FilesMatch "\.(ico|jpe?g|png|gif|swf|css|gz)$">
@@ -18,10 +16,6 @@ Header unset Cache-Control
 </IfModule>
 # END Cache-Control Headers
 
-BrowserMatch ^Mozilla/4 gzip-only-text/html
-BrowserMatch ^Mozilla/4\.0[678] no-gzip
-BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
-BrowserMatch \bMSI[E] !no-gzip !gzip-only-text/html
 # BEGIN Expires Headers
 <IfModule mod_expires.c>
 ExpiresActive On
@@ -38,3 +32,10 @@ ExpiresDefault "access plus 2 days"
 </IfModule>
 # END Expires Headers
 
+AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/x-javascript
+SetOutputFilter DEFLATE
+
+BrowserMatch ^Mozilla/4 gzip-only-text/html
+BrowserMatch ^Mozilla/4\.0[678] no-gzip
+BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+BrowserMatch \bMSI[E] !no-gzip !gzip-only-text/html
